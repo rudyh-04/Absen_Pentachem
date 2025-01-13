@@ -15,7 +15,7 @@ with st.form(key='absensi_form'):
     nama = st.text_input("Nama Karyawan")
     tanggal_masuk = st.date_input("Tanggal Masuk", datetime.date.today())
     tanggal_pulang = st.date_input("Tanggal Pulang", datetime.date.today())
-    hadir = st.radio("Status Kehadiran", ('Hadir', 'Tidak Hadir', 'Ijin', 'Sakit', 'Cuti'))
+    hadir = st.radio("Status Kehadiran", ('Hadir', 'Tidak Hadir', 'Ijin', 'Sakit', 'Cuti', 'Libur'))
 
     # Input jam masuk
     jam_masuk = st.time_input("Jam Masuk", datetime.time(8, 0))  # Default jam masuk jam 8 pagi
@@ -72,7 +72,7 @@ try:
         new_nama = st.text_input("Nama Karyawan", value=selected_row['Nama'])
         new_tanggal_masuk = st.date_input("Tanggal Masuk", value=pd.to_datetime(selected_row['Tanggal Masuk']))
         new_tanggal_pulang = st.date_input("Tanggal Pulang", value=pd.to_datetime(selected_row['Tanggal Pulang']))
-        new_hadir = st.radio("Status Kehadiran", ('Hadir', 'Tidak Hadir', 'Ijin', 'Sakit', 'Cuti'), index=['Hadir', 'Tidak Hadir', 'Ijin', 'Sakit', 'Cuti'].index(selected_row['Kehadiran']))
+        new_hadir = st.radio("Status Kehadiran", ('Hadir', 'Tidak Hadir', 'Ijin', 'Sakit', 'Cuti'), index=['Hadir', 'Tidak Hadir', 'Ijin', 'Sakit', 'Cuti', 'Libur'].index(selected_row['Kehadiran']))
         new_jam_masuk = st.time_input("Jam Masuk", value=pd.to_datetime(selected_row['Jam Masuk']).time())
         new_jam_pulang = st.time_input("Jam Pulang", value=pd.to_datetime(selected_row['Jam Pulang']).time())
 
