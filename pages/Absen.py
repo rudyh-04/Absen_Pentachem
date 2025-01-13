@@ -31,7 +31,7 @@ with st.form(key='absensi_form'):
     lembur = max(0, (jam_pulang_dt - jam_masuk_dt).seconds / 3600 - 9)  # Menghitung lembur jika lebih dari 9 jam kerja
     keterangan_lembur = st.text_input("Keterangan Lembur:")
 
-    submit_button = st.form_submit_button(label='Kirim')
+    submit_button = st.form_submit_button(label='Save')
 
     if submit_button:
         # Menyimpan data ke dalam DataFrame
